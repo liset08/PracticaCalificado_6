@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cayhualla.practicacalificado_6">
+
+    <application
+        android:name="com.orm.SugarApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="DATABASE"
+            android:value="liset.db" /> <!-- nombre de la base de datos -->
+        <meta-data
+            android:name="VERSION"
+            android:value="2" /> <!-- cambiar la version para que el suggar orm se actualize la base de datos -->
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" /> <!--  -->
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.cayhualla.practicacalificado_6.models" />
+        <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".LoginActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+        <activity android:name=".RegisterActivity"></activity>
+    </application>
+
+</manifest>
