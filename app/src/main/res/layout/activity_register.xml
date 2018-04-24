@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_margin="16dp"
     android:layout_height="match_parent"
-    tools:context="com.cayhualla.practicacalificado_6.RegisterActivity">
+    tools:context="com.cayhualla.practicacalificado_6.Activities.RegisterActivity">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

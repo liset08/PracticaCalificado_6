@@ -8,6 +8,11 @@ import com.orm.dsl.Table;
 @Table
 public class User {
 
+    private Long id;
+    private String email;
+    private String fullname;
+    private String username;
+    private String password;
 
     public User() {
     }
@@ -22,20 +27,18 @@ public class User {
                 ", password='" + password + '\'' +
                 '}';
     }
-    private Long id;
+
 
     public User( String email, String fullname, String username, String password) {
-        this.id = id;
         this.email = email;
         this.fullname = fullname;
         this.username = username;
         this.password = password;
+
     }
 
-    private String email;
-    private String fullname;
-    private String username;
-    private String password;
+
+
 
     public Long getId() {
         return id;

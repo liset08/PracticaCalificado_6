@@ -1,4 +1,4 @@
-package com.cayhualla.practicacalificado_6;
+package com.cayhualla.practicacalificado_6.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.cayhualla.practicacalificado_6.R;
 import com.cayhualla.practicacalificado_6.repositories.UserRepository;
 
 public class RegisterActivity extends AppCompatActivity {

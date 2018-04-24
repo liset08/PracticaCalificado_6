@@ -34,6 +34,16 @@ public class UserRepository {
         return null;
     }
 
+    public static User getUser(String username){
+        for (User user : list()){
+            if(user.getUsername().equalsIgnoreCase(username)){
+                return user;
+            }
+        }
+        return null;
+    }
+
+
     public static void create(String email,String fullname , String username , String password){
         User user = new User(email,fullname, username, password);
         SugarRecord.save(user);

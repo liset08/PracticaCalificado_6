@@ -7,7 +7,7 @@
     android:background="@color/cardview_light_background"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.cayhualla.practicacalificado_6.LoginActivity">
+    tools:context="com.cayhualla.practicacalificado_6.Activities.LoginActivity">
 
     <ProgressBar
         android:id="@+id/progressbar"
