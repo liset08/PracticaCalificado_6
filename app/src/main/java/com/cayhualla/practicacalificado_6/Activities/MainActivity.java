@@ -7,6 +7,8 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -16,22 +18,37 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cayhualla.practicacalificado_6.R;
+import com.cayhualla.practicacalificado_6.adapter.ProductAdapter;
+import com.cayhualla.practicacalificado_6.models.Producto;
 import com.cayhualla.practicacalificado_6.models.User;
+import com.cayhualla.practicacalificado_6.repositories.ProductoRepository;
 import com.cayhualla.practicacalificado_6.repositories.UserRepository;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
+    private static final int REGISTER_FORM_REQUEST=100;
 
     // SharedPreferences
     private SharedPreferences sharedPreferences;
-
+    private RecyclerView usersList;
     private TextView usernameText, usernameText1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//Recycler View
+        // Configure ReciclerView
+        usersList = (RecyclerView) findViewById(R.id.user_list);
+        usersList.setLayoutManager(new LinearLayoutManager(this));
 
+        //
+
+        // Set Data Adapter to ReciclerView
+        List<Producto> productos = ProductoRepository.list();
+        usersList.setAdapter(new ProductAdapter(productos));
 
         getSupportActionBar().setTitle("Catalogo");
 
@@ -133,6 +150,11 @@ public class MainActivity extends AppCompatActivity {
 
         finish();
 
+    }
+
+    //icono de agregar nuevo producto
+    public void callRegisterForm(View view){
+        startActivityForResult(new Intent(this, RegisterActivity.class), REGISTER_FORM_REQUEST);
     }
 
 }
