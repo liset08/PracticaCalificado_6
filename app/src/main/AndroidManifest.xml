@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar">
+       >
         <meta-data
             android:name="DATABASE"
             android:value="liset.db" /> <!-- nombre de la base de datos -->
@@ -23,8 +23,11 @@
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.cayhualla.practicacalificado_6.models" />
 
-        <activity android:name=".Activities.MainActivity"></activity>
-        <activity android:name=".Activities.LoginActivity">
+        <activity android:name=".Activities.MainActivity"
+            android:theme="@style/Theme.AppCompat"></activity>
+
+        <activity android:name=".Activities.LoginActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

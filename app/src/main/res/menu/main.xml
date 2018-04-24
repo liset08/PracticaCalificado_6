@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <item
+        android:id="@+id/action_takepicture"
+        android:orderInCategory="101"
+        android:title="Tomar Foto"
+        android:icon="@android:drawable/ic_menu_rotate"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="101"
+        android:title="Cerrar Sesion"
+        android:icon="@android:drawable/ic_lock_power_off"
+        app:showAsAction="ifRoom" />
+
+
+
+    <group android:checkableBehavior="all">
+        <item
+            android:id="@+id/action_toggle"
+            android:orderInCategory="301"
+            android:title="Modo offline"
+            app:showAsAction="never"/>
+    </group>
+
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="999"
+        android:title="Acerca de"
+        android:icon="@android:drawable/ic_menu_help"
+        app:showAsAction="never" />
+
+</menu>
