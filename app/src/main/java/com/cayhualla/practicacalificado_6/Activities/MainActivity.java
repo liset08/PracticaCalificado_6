@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cayhualla.practicacalificado_6.ProductoRegister;
 import com.cayhualla.practicacalificado_6.R;
 import com.cayhualla.practicacalificado_6.adapter.ProductAdapter;
 import com.cayhualla.practicacalificado_6.models.Producto;
@@ -154,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
     //icono de agregar nuevo producto
     public void callRegisterForm(View view){
-        startActivityForResult(new Intent(this, RegisterActivity.class), REGISTER_FORM_REQUEST);
+        startActivityForResult(new Intent(this, ProductoRegister.class), REGISTER_FORM_REQUEST);
     }
 
 }

@@ -14,4 +14,14 @@ public class ProductoRepository {
         List<Producto> productos = SugarRecord.listAll(Producto.class);
         return productos;
     }
+
+    public static Producto read(Long id){
+        Producto user = SugarRecord.findById(Producto.class, id);
+        return user;
+    }
+
+    public static void create(String nombre, String categoria, String descripcion, int precio){
+        Producto user = new Producto(nombre, categoria, descripcion,precio);
+        SugarRecord.save(user);
+    }
 }
