@@ -14,9 +14,9 @@
             android:value="liset.db" /> <!-- nombre de la base de datos -->
         <meta-data
             android:name="VERSION"
-            android:value="7" /> <!-- cambiar la version para que el suggar orm se actualize la base de datos -->
+            android:value="11" /> <!-- cambiar la version para que el suggar orm se actualize la base de datos -->
         <meta-data
-            android:name="QUE       RY_LOG"
+            android:name="QUERY_LOG"
             android:value="true" /> <!--  -->
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
@@ -24,7 +24,7 @@
 
         <activity
             android:name=".Activities.MainActivity"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/AppThemeMainActivity" />
         <activity
             android:name=".Activities.LoginActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -35,8 +35,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.RegisterActivity" />
-        <activity android:name=".MyPreferencesActivity"></activity>
-        <activity android:name=".ProductoRegister"></activity>
+        <activity android:name=".Preferences.MyPreferencesActivity"></activity>
+        <activity android:name=".Activities.ProductoRegister"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            ></activity>
     </application>
 
 </manifest>

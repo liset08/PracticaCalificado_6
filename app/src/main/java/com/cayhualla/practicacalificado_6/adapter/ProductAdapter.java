@@ -21,14 +21,31 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     private List<Producto> productos;
 
-    public void setProductos(List<Producto> productos) {
-        this.productos = productos;
-    }
 
     public ProductAdapter(List<Producto> productos){
         this.productos = productos;
     }
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
 
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        public TextView nombre;
+        public TextView descripcion;
+        public TextView precio;
+        public ImageView picture;
+
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            picture = (ImageView) itemView.findViewById(R.id.picture_image);
+
+            nombre = (TextView) itemView.findViewById(R.id.tx_nombre);
+            descripcion = (TextView) itemView.findViewById(R.id.tx_descripcion);
+    // precio = (TextView) itemView.findViewById(R.id.tx_precio);
+        }
+    }
 
 
 
@@ -44,7 +61,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         Producto user = this.productos.get(position);
         viewHolder.nombre.setText(user.getNombre());
         viewHolder.descripcion.setText(user.getDescripcion());
-        viewHolder.precio.setText(user.getPrecio());
+        //viewHolder.precio.setText(user.getPrecio());
 
     }
 
@@ -53,21 +70,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         return this.productos.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView nombre;
-        public TextView descripcion;
-        public TextView precio;
-
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-
-            nombre = (TextView) itemView.findViewById(R.id.nombre);
-            descripcion = (TextView) itemView.findViewById(R.id.descripcion);
-            precio = (TextView) itemView.findViewById(R.id.precio);
-        }
-    }
 
 
 

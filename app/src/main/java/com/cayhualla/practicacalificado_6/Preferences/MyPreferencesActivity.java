@@ -1,4 +1,4 @@
-package com.cayhualla.practicacalificado_6;
+package com.cayhualla.practicacalificado_6.Preferences;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -7,6 +7,8 @@ import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.cayhualla.practicacalificado_6.R;
 
 public class MyPreferencesActivity extends PreferenceActivity {
 
