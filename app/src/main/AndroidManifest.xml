@@ -14,7 +14,7 @@
             android:value="liset.db" /> <!-- nombre de la base de datos -->
         <meta-data
             android:name="VERSION"
-            android:value="11" /> <!-- cambiar la version para que el suggar orm se actualize la base de datos -->
+            android:value="12" /> <!-- cambiar la version para que el suggar orm se actualize la base de datos -->
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" /> <!--  -->

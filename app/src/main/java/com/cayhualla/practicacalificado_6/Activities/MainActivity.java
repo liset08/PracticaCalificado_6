@@ -20,6 +20,7 @@ import com.cayhualla.practicacalificado_6.Fragements.FavoriteFragment;
 import com.cayhualla.practicacalificado_6.Fragements.HomeFragment;
 import com.cayhualla.practicacalificado_6.R;
 import com.cayhualla.practicacalificado_6.models.User;
+import com.cayhualla.practicacalificado_6.repositories.ProductoRepository;
 import com.cayhualla.practicacalificado_6.repositories.UserRepository;
 
 public class MainActivity extends AppCompatActivity {
@@ -141,7 +142,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void callDeleteProdu(View view){
 
+        ProductoRepository.delete((long) 1);
+    }
 
     public void callLogout(){
 
