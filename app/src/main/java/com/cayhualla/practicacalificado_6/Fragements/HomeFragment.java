@@ -33,7 +33,6 @@ public class HomeFragment extends Fragment {
 
     // SharedPreferences
     private RecyclerView usersList;
-    private TextView usernameText, usernameText1;
 
 
     public HomeFragment() {
@@ -64,9 +63,7 @@ public class HomeFragment extends Fragment {
         List<Producto> productos = ProductoRepository.list();
         usersList.setAdapter(new ProductAdapter(productos));
 //Cambiar el nombre del menu superior
-        usernameText1 = (TextView)view.findViewById(R.id.welcome_text);
 
-        usernameText = (TextView)view.findViewById(R.id.fullname_text);
 
        // Bundle args = getArguments();
         // String username = args.getString("email");

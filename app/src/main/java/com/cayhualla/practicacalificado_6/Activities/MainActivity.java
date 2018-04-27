@@ -8,8 +8,6 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,18 +19,14 @@ import com.cayhualla.practicacalificado_6.Fragements.DeleteFragment;
 import com.cayhualla.practicacalificado_6.Fragements.FavoriteFragment;
 import com.cayhualla.practicacalificado_6.Fragements.HomeFragment;
 import com.cayhualla.practicacalificado_6.R;
-import com.cayhualla.practicacalificado_6.adapter.ProductAdapter;
-import com.cayhualla.practicacalificado_6.models.Producto;
 import com.cayhualla.practicacalificado_6.models.User;
-import com.cayhualla.practicacalificado_6.repositories.ProductoRepository;
 import com.cayhualla.practicacalificado_6.repositories.UserRepository;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final int REGISTER_FORM_REQUEST=100;
     private SharedPreferences sharedPreferences;
+    private TextView usernameText, usernameText1;
 
 
     @Override
@@ -79,15 +73,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
 // init SharedPreferences
+
+        usernameText1 = (TextView)findViewById(R.id.welcome_text);
+
+        usernameText = (TextView)findViewById(R.id.fullname_text);
+
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
 
         // get username from SharedPreferences
         String username = sharedPreferences.getString("username", null);
-HomeFragment hf=new HomeFragment();
-        Bundle args = new Bundle();
+        Log.d(TAG, "username: " + username);
 
-        args.putString("email", username);
-        hf.setArguments(args);
+        User user = UserRepository.getUser(username);
+
+        usernameText.setText(user.getFullname());
+
     }
 
 
@@ -133,9 +134,13 @@ HomeFragment hf=new HomeFragment();
 
 
     //icono de agregar nuevo producto
+
+
     public void callRegisterFormProducto(View view){
         startActivityForResult(new Intent(MainActivity.this, ProductoRegister.class), REGISTER_FORM_REQUEST);
     }
+
+
 
 
     public void callLogout(){

@@ -10,6 +10,7 @@ import com.cayhualla.practicacalificado_6.R;
 import com.cayhualla.practicacalificado_6.repositories.UserRepository;
 
 public class RegisterActivity extends AppCompatActivity {
+
     private EditText fullnameInput;
     private EditText emailInput;
     private EditText passwordInput;

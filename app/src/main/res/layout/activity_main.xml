@@ -10,6 +10,7 @@
     android:fitsSystemWindows="true"
     tools:context="com.cayhualla.practicacalificado_6.Activities.MainActivity">
 
+
     <RelativeLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
@@ -20,7 +21,42 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/linearLayout" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_light_background"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/welcome_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Bienvenido"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_shadow_start_color"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/fullname_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/welcome_text"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_shadow_start_color"
+                android:textSize="20sp"
+                tools:text="Nombre completo" />
+
+
+        </LinearLayout>
 
     </RelativeLayout>
     <android.support.design.widget.BottomNavigationView

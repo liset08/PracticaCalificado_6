@@ -35,10 +35,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.RegisterActivity" />
-        <activity android:name=".Preferences.MyPreferencesActivity"></activity>
-        <activity android:name=".Activities.ProductoRegister"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            ></activity>
+        <activity android:name=".Preferences.MyPreferencesActivity" />
+        <activity
+            android:name=".Activities.ProductoRegister"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>

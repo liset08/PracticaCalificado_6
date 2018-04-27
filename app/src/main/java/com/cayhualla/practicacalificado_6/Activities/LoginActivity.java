@@ -91,8 +91,9 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void callRegisterForm(View view){
+    public void callRegisterFormUsuario(View view){
         startActivityForResult(new Intent(LoginActivity.this, RegisterActivity.class), REGISTER_FORM_REQUEST);
+
     }
 
 }
