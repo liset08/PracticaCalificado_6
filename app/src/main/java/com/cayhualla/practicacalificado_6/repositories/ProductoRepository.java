@@ -19,6 +19,10 @@ public class ProductoRepository {
         Producto user = SugarRecord.findById(Producto.class, id);
         return user;
     }
+    public static void delete(Long id){
+        Producto user = SugarRecord.findById(Producto.class, id);
+        SugarRecord.delete(user);
+    }
 
     public static void create(String nombre, String categoria, String descripcion, int precio){
         Producto user = new Producto(nombre, categoria, descripcion,precio);
