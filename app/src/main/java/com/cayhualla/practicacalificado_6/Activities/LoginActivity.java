@@ -95,5 +95,8 @@ public class LoginActivity extends AppCompatActivity {
         startActivityForResult(new Intent(LoginActivity.this, RegisterActivity.class), REGISTER_FORM_REQUEST);
 
     }
+    public void callReggisterrr(View view){
+        startActivityForResult(new Intent(LoginActivity.this, RegisterActivity.class), REGISTER_FORM_REQUEST);
 
+    }
 }

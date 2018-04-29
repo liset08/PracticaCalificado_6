@@ -17,9 +17,9 @@
 
     <item
         android:id="@+id/menu_delete"
-        android:title="Delete"
+        android:title="Archive"
         android:fillColor="#FFFF"
-        android:icon="@drawable/delete"
+        android:icon="@drawable/archive"
 
         />
 

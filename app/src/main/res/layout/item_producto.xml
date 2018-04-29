@@ -7,8 +7,9 @@
     android:layout_marginLeft="20dp"
     android:layout_marginRight="20dp"
     android:layout_marginTop="20dp"
-    android:background="@android:color/background_light"
     android:clickable="true"
+    android:background="@android:color/transparent"
+
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground">
 
@@ -16,44 +17,58 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="160dp"
+        android:background="@drawable/border"
 
-        android:background="@color/cardview_light_background"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tx_nombre"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="Fullname"
-            android:textColor="@android:color/black"
+            android:orientation="horizontal">
 
-            android:textSize="20sp"
-            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tx_precio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/tx_nombre"
-            android:text="Fullname"
-            android:textSize="15sp"
-            android:textColor="@android:color/black"
+            <TextView
+                android:id="@+id/tx_nombre"
+                android:layout_width="155dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="nombre"
+                android:textColor="@android:color/black"
 
-            android:textStyle="bold" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:text="S/.  "
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tx_precio"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:text="precio"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tx_descripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/tx_precio"
-            android:textColor="@android:color/black"
+            android:layout_marginTop="40dp"
 
-            android:text="Email"
+            android:text="descripcion"
+            android:textColor="@android:color/black"
             android:textSize="16sp" />
 
         <View
@@ -66,21 +81,20 @@
             android:background="@drawable/separador" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_archivar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/view"
             android:layout_marginEnd="17dp"
             android:layout_marginTop="10dp"
             android:textColor="@android:color/black"
-            android:onClick="callDeleteProdu"
-            android:layout_toStartOf="@+id/button2"
-            android:background="@android:color/transparent"
+            android:layout_toStartOf="@+id/btn_favoritos"
+            android:background="@drawable/btn_click"
             android:drawableLeft="@drawable/archive"
             android:text="  Archivar" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_favoritos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
@@ -88,7 +102,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/view"
             android:layout_marginTop="10dp"
-            android:background="@android:color/transparent"
+            android:background="@drawable/btn_click"
             android:drawableLeft="@drawable/favorite"
             android:text="  Favoritos" />
 

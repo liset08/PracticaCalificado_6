@@ -12,14 +12,13 @@ public class Producto {
 
     private Long id;
     private String nombre;
-
-
     private String categoria;
     private String descripcion;
-    private int precio;
+    private String estado;
+    private String precio;
+    private Long id_user;
 
-    public Producto() {
-    }
+
 
     @Override
     public String toString() {
@@ -28,9 +27,19 @@ public class Producto {
                 ", nombre='" + nombre + '\'' +
                 ", categoria='" + categoria + '\'' +
                 ", descripcion='" + descripcion + '\'' +
-                ", precio=" + precio +
+                ", estado='" + estado + '\'' +
+                ", precio='" + precio + '\'' +
+                ", id_user=" + id_user +
                 '}';
     }
+
+
+
+
+
+    public Producto() {
+    }
+
 
     public Long getId() {
         return id;
@@ -64,21 +73,38 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public int getPrecio() {
+    public String getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(String precio) {
         this.precio = precio;
     }
+    public Long getId_user() {
+        return id_user;
+    }
 
-    public Producto( String nombre, String categoria, String descripcion, int precio) {
+    public void setId_user(Long id_user) {
+        this.id_user = id_user;
+    }
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+
+    public Producto( String nombre, String categoria, String descripcion, String precio,String estado ,Long id_user) {
 
 
         this.nombre = nombre;
         this.categoria = categoria;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.id_user = id_user;
+
     }
 
 

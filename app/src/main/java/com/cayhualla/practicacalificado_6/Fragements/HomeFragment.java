@@ -28,7 +28,7 @@ import com.cayhualla.practicacalificado_6.repositories.UserRepository;
 
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements ChasngeNotifier {
     private static final int REGISTER_FORM_REQUEST=100;
     private static final String TAG=HomeFragment.class.getSimpleName();
 
@@ -54,27 +54,15 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-// Configure ReciclerView
+// Configure ReciclerVie
         usersList = (RecyclerView)view.findViewById(R.id.user_list);
         usersList.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        //
 
-        // Set Data Adapter to ReciclerView
         List<Producto> productos = ProductoRepository.list();
-        usersList.setAdapter(new ProductAdapter(productos));
+        usersList.setAdapter(new ProductAdapter(this,productos));
 //Cambiar el nombre del menu superior
 
-
-       // Bundle args = getArguments();
-        // String username = args.getString("email");
-
-
-      //  Log.d(TAG, "username: " + username);
-
-       // User user = UserRepository.getUser(username);
-        //usernameText.setText(user.getFullname());
-        // Inflate the layout for this fragment
     return view;
     }
 
@@ -108,8 +96,11 @@ public class HomeFragment extends Fragment {
     }
 
 
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+
+    @Override
+    public void notifyChanges() {
+        ProductAdapter pa = (ProductAdapter) usersList.getAdapter();
+        pa.setProductos(ProductoRepository.list());
+        pa.notifyDataSetChanged();
     }
 }

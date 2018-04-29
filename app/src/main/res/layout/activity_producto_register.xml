@@ -51,8 +51,9 @@
                     android:layout_width="63dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:padding="4dp"
 
-                    app:srcCompat="@drawable/account_box" />
+                    app:srcCompat="@drawable/product" />
 
                 <EditText
                     android:id="@+id/nombre_input"
@@ -146,7 +147,7 @@
                     android:layout_toStartOf="@+id/button2"
                     android:ems="12"
                     android:hint="Precio"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textColor="@android:color/black"
                     android:textColorHint="@color/colorAccent"
                     app:layout_constraintEnd_toStartOf="@+id/button2"

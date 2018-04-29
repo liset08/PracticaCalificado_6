@@ -35,8 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//Recycler View
-
+//Poner el titulo al menu superior
         getSupportActionBar().setTitle("Catalogo");
 //
         //menu bottom
@@ -51,19 +50,19 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.menu_home:
-                        Toast.makeText(MainActivity.this, "Go home section...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Home Section", Toast.LENGTH_SHORT).show();
                         HomeFragment fragment = new HomeFragment();
                         fragmentManager.beginTransaction().replace(R.id.drawer_layout, fragment).addToBackStack("tag").commit();
 
                         break;
                     case R.id.menu_favorite:
-                        Toast.makeText(MainActivity.this, "Go camera section...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Favorite Section", Toast.LENGTH_SHORT).show();
                         FavoriteFragment favoriteFragment=new FavoriteFragment();
                         fragmentManager.beginTransaction().replace(R.id.drawer_layout,favoriteFragment).addToBackStack("tag").commit();
 
                         break;
                     case R.id.menu_delete:
-                        Toast.makeText(MainActivity.this, "Go share section...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Archive section", Toast.LENGTH_SHORT).show();
                         DeleteFragment deleteFragment=new DeleteFragment();
                         fragmentManager.beginTransaction().replace(R.id.drawer_layout,deleteFragment).addToBackStack("tag").commit();
                         break;
@@ -141,11 +140,6 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(new Intent(MainActivity.this, ProductoRegister.class), REGISTER_FORM_REQUEST);
     }
 
-
-    public void callDeleteProdu(View view){
-
-        ProductoRepository.delete((long) 1);
-    }
 
     public void callLogout(){
 
